@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RGIW Flyer Generator</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>ROOTED & GROUNDED IN WORSHIP 2.0</h1>
+
+<p>Create your personalised flyer.</p>
+
+<input type="file" id="photo" accept="image/*">
+
+<input
+type="text"
+id="name"
+placeholder="Enter your name">
+
+<button onclick="generateFlyer()">
+Generate Flyer
+</button>
+
+<div id="flyer">
+
+<img src="flyer-bg.jpg" class="background">
+
+<img id="preview">
+
+<div id="attending">
+I'M ATTENDING
+</div>
+
+<div id="username"></div>
+
+</div>
+
+<button onclick="downloadFlyer()">
+Download Flyer
+</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+  </html>
