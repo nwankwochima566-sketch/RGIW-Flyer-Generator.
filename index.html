@@ -3,53 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RGIW Flyer Generator</title>
+<title>Rooted & Grounded in Worship 2.0</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+body{
+background:#000;
+color:white;
+}
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
+url("flyer-bg.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero-content{
+max-width:700px;
+}
+
+.logo{
+font-size:18px;
+letter-spacing:3px;
+color:#FFD700;
+margin-bottom:15px;
+}
+
+h1{
+font-size:42px;
+color:#FFD700;
+margin-bottom:15px;
+}
+
+h2{
+font-size:24px;
+margin-bottom:20px;
+}
+
+.details{
+font-size:18px;
+line-height:35px;
+margin-bottom:35px;
+}
+
+.btn{
+display:inline-block;
+padding:18px 35px;
+background:#FFD700;
+color:black;
+text-decoration:none;
+font-weight:bold;
+border-radius:40px;
+font-size:20px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+.countdown{
+background:#111;
+padding:60px 20px;
+text-align:center;
+}
+
+.countdown h3{
+color:#FFD700;
+font-size:32px;
+margin-bottom:20px;
+}
+
+#timer{
+font-size:28px;
+font-weight:bold;
+}
+
+footer{
+background:#000;
+padding:40px;
+text-align:center;
+border-top:1px solid #333;
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:30px;
+}
+
+h2{
+font-size:20px;
+}
+
+.btn{
+width:100%;
+}
+
+}
+</style>
+
 </head>
 
 <body>
 
-<div class="container">
+<section class="hero">
 
-<h1>ROOTED & GROUNDED IN WORSHIP 2.0</h1>
+<div class="hero-content">
 
-<p>Create your personalised flyer.</p>
-
-<input type="file" id="photo" accept="image/*">
-
-<input
-type="text"
-id="name"
-placeholder="Enter your name">
-
-<button onclick="generateFlyer()">
-Generate Flyer
-</button>
-
-<div id="flyer">
-
-<img src="flyer-bg.jpg" class="background">
-
-<img id="preview">
-
-<div id="attending">
-I'M ATTENDING
+<div class="logo">
+RGIW MINISTRY
 </div>
 
-<div id="username"></div>
+<h1>
+ROOTED & GROUNDED<br>
+IN WORSHIP 2.0
+</h1>
+
+<h2>
+Spirit to Spirit Worship
+</h2>
+
+<div class="details">
+
+📅 29 August 2026<br>
+
+🕙 10:00 AM<br>
+
+📍 Assemblies of God Church, Molete
 
 </div>
 
-<button onclick="downloadFlyer()">
-Download Flyer
-</button>
+<a href="flyer.html" class="btn">
+✨ CREATE MY FLYER ✨
+</a>
 
 </div>
 
-<script src="script.js"></script>
+</section>
+
+<section class="countdown">
+
+<h3>Countdown</h3>
+
+<div id="timer"></div>
+
+</section>
+
+<footer>
+
+© 2026 Rooted & Grounded in Worship
+
+</footer>
+
+<script>
+
+const eventDate = new Date("August 29, 2026 10:00:00").getTime();
+
+setInterval(function(){
+
+const now = new Date().getTime();
+
+const distance = eventDate-now;
+
+const days = Math.floor(distance/(1000*60*60*24));
+
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+
+const seconds = Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("timer").innerHTML =
+days+" Days "+
+hours+" Hours "+
+minutes+" Minutes "+
+seconds+" Seconds";
+
+},1000);
+
+</script>
 
 </body>
   </html>
