@@ -1,4 +1,4 @@
-const photoInput = document.getElementById("photo");
+alert("Script loaded");const photoInput = document.getElementById("photo");
 const preview = document.getElementById("preview");
 const nameInput = document.getElementById("name");
 const username = document.getElementById("username");
